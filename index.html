@@ -4,9 +4,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- Importa CSS-Bootstrap  -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Importa CSS customizado  -->
     <title>Formulário de Contato</title>
 </head>
 <body>
+    <div class="container"> <!-- Classe responsável pela divisão de conteúdo da página -->
+        
+        <div class="row"> <!-- Classe responsável por uma linha de conteúdo dentro da página -->
+            <div class="col-6"> <!-- Classe com coluna ocupando 6 dos 12 espaços da página -->
+                <div class="mb-4"> <!-- Horário Atendimento -->
+                    <h3>Horário de Atendimento</h3>
+                    <p>08h às 18h | Seg à Sex</p>
+                </div>
+                <div class="mb-4">
+                    <h3>Endereço</h3>
+                    <p>Bla bla bla</p>
+                </div>
+                <div class="mb-4">
+                    <h3>Telefone</h3>
+                    <p>1210029102192</p>
+                    <h3>WhatsApp</h3>
+                    <p>24888737844</p>
+                </div>
+            </div>
+            
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Entre em Contato</h1>
+                        <form action="">
+                            <div class="mb-4"> <!-- Nome -->
+                                <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome">
+                                <div class="text-danger d-none">
+                                    Preencha este campo
+                                </div>
+                            </div>
+                            <div class="mb-4"> <!-- E-mail -->
+                                <input class="form-control" type="email" name="email" id="email" placeholder="E-mail">
+                                <div class="text-danger d-none">
+                                    Preencha este campo
+                                </div>
+                            </div>
+                            <div class="mb-4"> <!-- Telefone -->
+                                <input class="form-control" type="email" name="email" id="telefone" placeholder="Telefone">
+                                <input type="checkbox" class="form-check-input"> É WhatsApp
+                                <div class="text-danger d-none">
+                                    Preencha este campo
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <textarea name="mensagem" id="mensagem" class="form-control" placeholder="Mensagem"></textarea>
+                                <div class="text-danger d-none">
+                                    Preencha este campo
+                                </div>
+                            </div>
+                            <div class="mb-3 text-center">
+                                <button class="btn btn-primary" type="submit">Enviar</button>
+                                <div class="text-danger d-none">
+                                    Preencha este campo
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
 
 <!-- Importa JQuery e JS-Boostrap -->
 <script src="js/jquery-3.6.4.min.js"></script>
