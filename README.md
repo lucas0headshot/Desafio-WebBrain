@@ -21,16 +21,11 @@ Desafio proposto pelo Alan Farias, CTO da Web Brain Tecnologia <br/>
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - Bootstrap
-- JS, PHP e SQL
+- JQuery, Ajax, Json, PHP e SQL
 - Git e Github
-- Figma
 
 ## 💻 Projeto
 
 Este é um formulário de contato simples
 
 - [Visite o projeto online](https://lucas0headshot.github.io/Desafio-WebBrain/)
-
-## 🔖 Layout
-
-Você pode visualizar o layout do projeto através [DESSE LINK](). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
