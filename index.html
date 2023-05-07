@@ -1,11 +1,11 @@
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- Importa CSS-Bootstrap  -->
     <link rel="stylesheet" href="css/style.css"> <!-- Importa CSS customizado  -->
-    <title>Formulário de Contato</title>
+    <title>Contate-nos</title>
 </head>
 <body>
     <div class="container"> <!-- Classe responsável pela divisão de conteúdo da página -->
@@ -16,11 +16,11 @@
                     <h3>Horário de Atendimento</h3>
                     <p>08h às 18h | Seg à Sex</p>
                 </div>
-                <div class="mb-4">
+                <div class="mb-4"> <!-- Endereço -->
                     <h3>Endereço</h3>
                     <p>Bla bla bla</p>
                 </div>
-                <div class="mb-4">
+                <div class="mb-4"> <!-- Telefone -->
                     <h3>Telefone</h3>
                     <p>1210029102192</p>
                     <h3>WhatsApp</h3>
@@ -28,14 +28,14 @@
                 </div>
             </div>
             
-            <div class="col-6">
-                <div class="card">
-                    <div class="card-body">
+            <div class="col-4">
+                <div class="card"> <!-- Classe responsável por criar um enquadramento -->
+                    <div class="card-body"> <!-- Classe filha do card, responsável pelo conteúdo em si -->
                         <h1>Entre em Contato</h1>
-                        <form action="">
+                        <form action=""> <!-- Formulário -->
                             <div class="mb-4"> <!-- Nome -->
-                                <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome">
-                                <div class="text-danger d-none">
+                                <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome"> <!-- Input com a classe form-control, responsável pelo controle de conteúdo dentro do formulário -->
+                                <div class="text-danger d-none"> <!-- Classe que estiliza o texto | Alerta Campo-->
                                     Preencha este campo
                                 </div>
                             </div>
@@ -52,22 +52,35 @@
                                     Preencha este campo
                                 </div>
                             </div>
-                            <div class="mb-4">
+                            <div class="mb-4"> <!-- Mensagem -->
                                 <textarea name="mensagem" id="mensagem" class="form-control" placeholder="Mensagem"></textarea>
                                 <div class="text-danger d-none">
                                     Preencha este campo
                                 </div>
                             </div>
-                            <div class="mb-3 text-center">
-                                <button class="btn btn-primary" type="submit">Enviar</button>
-                                <div class="text-danger d-none">
-                                    Preencha este campo
+                            <div class="mb-3 text-center"> <!-- Botão Enviar -->
+                                <button class="btn" type="submit">Enviar</button>
+                            </div>
+                            <div class="mb-2">
+                                <div class="alert alert-warning d-none"> <!-- Alerta Campos -->
+                                    Um ou mais campos possuem um erro. Verifique e tente novamente
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>  
+        </div>
+
+        <div class="row">
+            <div class="col-8 mb-5">
+                <h3 class="text-center">Quer nos fazer uma visita?</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Incorporação do Google Maps --> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.969128576295!2d-49.38094558781442!3d-28.690570069723837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95217992152954bd%3A0xa36567dea3e92d61!2sWeb%20Brain%20Tecnologia!5e0!3m2!1spt-BR!2sbr!4v1683415380252!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

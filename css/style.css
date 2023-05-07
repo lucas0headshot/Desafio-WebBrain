@@ -1,4 +1,37 @@
 body {
     padding-top: 60px;
-    background: #CBD9EA;
+    background: linear-gradient(#4760fd, #8b09fc);
+    color: black;
+}
+
+/* Card */
+.card {
+    box-shadow: 3px 6px 8px 3px rgba(7, 7, 7, 0.3);
+}
+
+/* iFrame */
+iframe {
+    width: 100%;
+    height: 220px;
+}
+
+/* textarea Form */
+textarea.form-control {
+    height: 90px;
+    resize: none;
+}
+
+/* btn Form */
+.btn {
+    background: #8b09fc;
+    color: #ffffff;
+}
+
+.btn:hover {
+    background-color: #3abec0;
+    color: #ffffff;
+}
+
+form, .alert {
+    margin-bottom: 0;
 }
