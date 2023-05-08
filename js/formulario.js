@@ -1,7 +1,5 @@
-//Função executa ao clicar no botão Enviar
-$('#form-contato').submit(function(e){
-    e.preventDefault();
-
+//Função executa ao tentar Enviar o formulário
+$('#form-contato').submit(function(){
     var nome = $('#nome'); //Var nome recebe #nome do Formulário
     var email = $('#email');
     var tel = $('#telefone');
@@ -45,22 +43,37 @@ $('#form-contato').submit(function(e){
         msg.addClass('is-invalid');
         return false;
     }
-    
+
     if ($('#confirmaWhatsapp').is(':checked') == true){ //Verifica se "É WhatsApp" está marcado
-        var wpp = tel;
+        var wpp = tel.val();
+    }else{
+        var wpp = 0;
     }
 
     if ((nome.val() != '') && (email.val() != '') && (tel.val() != '') && (msg.val() != '')){ //Verifica se todos os campos não estão vazios
         $.ajax({ //Ajax para enviar os dados pro PHP
-            url: 'http://localhost/Desafio-WebBrain/php/inserir.php', //URL do arquivo onde será enviado os dados
+            url: 'php/inserir.php', //URL do arquivo onde será enviado os dados
             method: 'POST', //Método para enviar
-            data: {nome: nome, email: email, tel: tel, wpp: wpp, msg: msg}, //Dados
-            dataType: 'json'
-        }).done(function(result){
-            console.log(result)
+            data: { //Dados
+                f_nome: nome.val(), 
+                f_email: email.val(), 
+                f_tel: tel.val(), 
+                f_wpp: wpp, 
+                f_msg: msg.val()},
+            success: function(result){
+                console.log(result);
+                alert('Sucesso!');
+            },
+            error: function(errorThrown, textStatus, XMLHttpRequest, result){
+                console.log(errorThrown);
+                console.log(textStatus);
+                console.log(XMLHttpRequest);
+                console.log(result);
+                alert('Erro!');
+            }
         });
-
-        return false;
+        
+        return true;
     }else{
         return false;
     }

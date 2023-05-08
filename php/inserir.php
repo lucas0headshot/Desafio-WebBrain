@@ -1,21 +1,27 @@
 <?php
-    header('ContentType: application/json');
-
-    $_POST['nome']; //Coletar os dados via POST lá do formulairo.js
-    $_POST['email'];
-    $_POST['telefone'];
-    $_POST['wpp'];
-    $_POST['msg'];
+    $f_nome = $_POST['f_nome']; //Coletar os dados via POST lá do formulairo.js
+    $f_email = $_POST['f_email'];
+    $f_tel = $_POST['f_tel'];
+    $f_wpp = $_POST['f_wpp'];
+    $f_msg = $_POST['f_msg'];
 
     //Conexão PDO com o BD mySQL - host, nome da database, usuário, senha
-    $pdo = new PDO('mysql:host=localhost; dbname=desafio_webbrain;', 'root', '');
+    //$pdo = new PDO('mysql:host=localhost; dbname=desafio_webbrain;', 'root', '');
 
-    $SQL = $pdo->prepare('Insert into contato (Nome, Email, Telefone, WhatsApp, Mensagem) Values ($nome, $email, $telefone, $wpp, $msg)');
-    $SQL->execute();
+    try{
+        $pdo = new \PDO('mysql:host=localhost;dbname=desafio_webbrain','root','',array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+        $pdo->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
+    }catch(Exception $e){
+        echo 'Erro ao conectar-se com MySQL!';
+        error_log($e->getMessage());
+    }
+
+    $SQL = $pdo->prepare('Insert into contato (Nome, Email, Telefone, WhatsApp, Mensagem) Values (?, ?, ?, ?, ?)');
+    $SQL->execute(array($f_nome, $f_email, $f_tel, $f_wpp, $f_msg));
 
     if ($SQL->rowCount() >= 1){
-        echo json_encode('Enviado com sucesso!');
+        echo ('<script>alert("Sucesso")</script>');
     }else{
-        echo json_encode('Ocorreu um erro...');
+        echo ('<script>alert("Erro")</script>');
     }
 ?>

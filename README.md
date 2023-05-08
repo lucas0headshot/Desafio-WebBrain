@@ -7,7 +7,6 @@ Desafio proposto pelo Alan Farias, CTO da Web Brain Tecnologia <br/>
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
 <br>
@@ -18,7 +17,7 @@ Desafio proposto pelo Alan Farias, CTO da Web Brain Tecnologia <br/>
 
 ## 🚀 Tecnologias
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+Esse projeto está sendo desenvolvido com as seguintes tecnologias:
 
 - Bootstrap
 - JQuery, Ajax, Json, PHP e SQL

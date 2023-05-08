@@ -32,7 +32,7 @@
                 <div class="card"> <!-- Classe responsável por criar um enquadramento -->
                     <div class="card-body"> <!-- Classe filha do card, responsável pelo conteúdo em si -->
                         <h1>Entre em Contato</h1>
-                        <form action="" id="form-contato"> <!-- Formulário -->
+                        <form  id="form-contato"> <!-- Formulário -->
                             <div class="mb-4"> <!-- Nome -->
                                 <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome"> <!-- Input com a classe form-control, responsável pelo controle de conteúdo dentro do formulário -->
                                 <div class="text-danger d-none" id="aviso-nome"> <!-- Classe que estiliza o texto | Alerta Campo-->
@@ -48,6 +48,7 @@
                             <div class="mb-4"> <!-- Telefone -->
                                 <input class="form-control" type="tel" name="tel" id="telefone" placeholder="Telefone">
                                 <input type="checkbox" class="form-check-input" id="confirmaWhatsapp"> É WhatsApp
+                                <input type="tel" id="wpp" name="wpp" class="d-none">
                                 <div class="text-danger d-none" id="aviso-tel">
                                     Preencha este campo
                                 </div>
