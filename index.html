@@ -34,27 +34,41 @@
                         <h1>Entre em Contato</h1>
                         <form  id="form-contato"> <!-- Formulário -->
                             <div class="mb-4"> <!-- Nome -->
-                                <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome"> <!-- Input com a classe form-control, responsável pelo controle de conteúdo dentro do formulário -->
+                                <input class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome"> <!-- Input com a classe form-control, responsável pelo controle de conteúdo dentro do formulário -->
                                 <div class="text-danger d-none" id="aviso-nome"> <!-- Classe que estiliza o texto | Alerta Campo-->
                                     Preencha este campo
                                 </div>
                             </div>
+                            <div class="mb-4"> <!-- Data Nascimento -->
+                                <label for="dataNasc" class="form-label">Sua data de nascimento</label>
+                                <div class="input-group date">
+                                    <input type="date" class="form-control" id="dataNasc">
+                                </div>
+                                <div class="text-danger d-none" id="aviso-data">
+                                    Preencha este campo
+                                </div>
+                            </div>
                             <div class="mb-4"> <!-- E-mail -->
-                                <input class="form-control" type="email" name="email" id="email" placeholder="E-mail">
+                                <input class="form-control" type="email" name="email" id="email" placeholder="Seu e-mail">
                                 <div class="text-danger d-none" id="aviso-email">
                                     Preencha este campo
                                 </div>
                             </div>
                             <div class="mb-4"> <!-- Telefone -->
-                                <input class="form-control" type="tel" name="tel" id="telefone" placeholder="Telefone">
-                                <input type="checkbox" class="form-check-input" id="confirmaWhatsapp"> É WhatsApp
-                                <input type="tel" id="wpp" name="wpp" class="d-none">
+                                <input class="form-control" type="tel" name="tel" id="telefone" onkeypress="$(this).mask('(00) 0000-0000')" placeholder="Seu telefone">
                                 <div class="text-danger d-none" id="aviso-tel">
                                     Preencha este campo
                                 </div>
                             </div>
+                            <div class="mb-4"> <!-- Celular/WhatsApp -->
+                                <input class="form-control" type="tel" name="wpp" id="wpp" onkeypress="$(this).mask('(00) 00000-0000')" placeholder="Seu celular/whatsapp">
+                                <input type="tel" id="wpp" name="wpp" class="d-none">
+                                <div class="text-danger d-none" id="aviso-wpp">
+                                    Preencha este campo
+                                </div>
+                            </div>
                             <div class="mb-4"> <!-- Mensagem -->
-                                <textarea name="mensagem" id="mensagem" class="form-control" placeholder="Mensagem"></textarea>
+                                <textarea name="mensagem" id="mensagem" class="form-control" placeholder="Sua mensagem"></textarea>
                                 <div class="text-danger d-none" id="aviso-msg">
                                     Preencha este campo
                                 </div>
@@ -85,9 +99,10 @@
         </div>
     </div>
 
-<!-- Importa JQuery, JS-Boostrap, .js que valida os campos e script -->
+<!-- Importa JQuery, JS-Boostrap, JQuery Mask, .js que valida os campos e script -->
 <script src="js/jquery-3.6.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mask.min.js"></script>
 <script src="js/formulario.js"></script>
 </body>
 </html>
