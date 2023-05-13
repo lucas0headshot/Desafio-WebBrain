@@ -3,14 +3,15 @@ $('#form-contato').submit(function(e){
     e.preventDefault();
 
     var nome = $('#nome'); //Var nome recebe #nome do Formulário
-    // var dataNasc = new Date($('#dataNasc'));
+    var dataNasc = new Date($('#dataNasc').val());
     var email = $('#email');
     var tel = $('#telefone');
     var wpp = $('#wpp');
     var msg = $('#mensagem');
     var aviso = $('#aviso');
 
-    // var dataAtual = new Date();
+    var dataAtual = new Date();
+    var idade = (dataAtual.getFullYear() - dataNasc.getFullYear());
 
     //Adiciona a classe d-none aos avisos, tornando-os invisíveis
     $('#aviso, #aviso-nome, #aviso-email, #aviso-tel, #aviso-msg').addClass('d-none');
@@ -18,28 +19,40 @@ $('#form-contato').submit(function(e){
     //Remove a classe is-invalid dos campos
     $('.is-invalid').removeClass('is-invalid');
 
-    if (nome.val() == ''){ //Verifica se Nome está vazio ou é menor que 3 caracteres
+    if (nome.val() == ''){ //Verifica se Nome está vazio
         $('#aviso-nome').removeClass('d-none'); //Remove a classe d-none do #aviso-nome, tornando-o visível
         aviso.removeClass('d-none'); //Remove a classe d-none do #aviso, tornando-o visível
         nome.focus(); //Alterna o foco para o nome
         nome.addClass('is-invalid'); //Adiciona a classe is-invalid, sinalizando o campo
-        
+        return false;
+    }else{
+        var v_nome = true; //Atribui true à variável que valida o nome
     }
 
-    /* if ((dataNasc.getFullYear - dataAtual.getFullYear) < 18){ //Verifica Data Nascimento
+    if (idade < 18){ //Verifica Data Nascimento
         $('#aviso-data').removeClass('d-none');
         aviso.removeClass('d-none');
-        dataNasc.focus();
-        dataNasc.addClass('is-invalid');
+        $('#aviso-idade').text("Precisa ter mais que 18 anos");
+        $('#dataNasc').addClass('is-invalid');
+        $('#dataNasc').focus();
         return false;
-    } */
+    }else if (isNaN(dataNasc.getTime())){
+        $('#aviso-data').removeClass('d-none');
+        aviso.removeClass('d-none');
+        $('#aviso-idade').text("Preencha este campo");
+        $('#dataNasc').focus();
+    }else{
+        var v_idade = true;
+    }
 
-    if (email.val() == ''){ //Verifica E-mail
+   if (email.val() == ''){ //Verifica E-mail
         $('#aviso-email').removeClass('d-none');
         aviso.removeClass('d-none');
         email.focus();
         email.addClass('is-invalid');
         return false;
+    }else{
+        var v_email = true;
     }
 
     if (tel.val() == ''){ //Verifica Telefone
@@ -48,6 +61,8 @@ $('#form-contato').submit(function(e){
         tel.focus();
         tel.addClass('is-invalid');
         return false;
+    }else{
+        var v_tel = true;
     }
 
     if (wpp.val() == ''){ //Verifica Celular/WhatsApp
@@ -56,6 +71,8 @@ $('#form-contato').submit(function(e){
         wpp.focus();
         wpp.addClass('is-invalid');
         return false;
+    }else{
+        var v_wpp = true;
     }
 
      if (msg.val() == ''){ //Verifica Mensagem
@@ -64,18 +81,22 @@ $('#form-contato').submit(function(e){
         msg.focus();
         msg.addClass('is-invalid');
         return false;
+    }else{
+        var v_msg = true;
     }
 
-    if ((nome.val() != '') && (email.val() != '') && (tel.val() != '') && (wpp.val() != '') && (msg.val() != '')){ //Verifica se todos os campos não estão vazios
+    if ((v_nome == true) && (v_idade == true) && (v_email == true) && (v_tel == true) && (v_wpp == true) && (v_msg == true)){ //Verifica se todos os campos não estão vazios
         $.ajax({ //Ajax para enviar os dados pro PHP
             url: 'php/inserir.php', //URL do arquivo onde será enviado os dados
             method: 'POST', //Método para enviar
             data: { //Dados
-                f_nome: nome.val(), 
+                f_nome: nome.val(),
+                f_dt_nasc: dataNasc.toISOString(),
                 f_email: email.val(), 
                 f_tel: tel.val(), 
                 f_wpp: wpp.val(), 
-                f_msg: msg.val()},
+                f_msg: msg.val()
+            },
             success: function(result){
                 console.log(result);
                 alert('Sucesso!');
