@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 13-Maio-2023 às 06:18
+-- Tempo de geração: 14-Maio-2023 às 01:46
 -- Versão do servidor: 8.0.27
 -- versão do PHP: 7.4.26
 
@@ -38,18 +38,15 @@ CREATE TABLE IF NOT EXISTS `contato` (
   `WhatsApp` varchar(14) NOT NULL,
   `Mensagem` varchar(500) NOT NULL,
   PRIMARY KEY (`ID_Contato`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `contato`
 --
 
 INSERT INTO `contato` (`ID_Contato`, `Nome`, `Email`, `Dt_Nasc`, `Dt_Envio`, `Telefone`, `WhatsApp`, `Mensagem`) VALUES
-(1, 'Lucas Teixeira Ronchi', 'lucas0headshot@gmail.com', '0000-00-00', '0000-00-00 00:00:00', '21', '0', 'sasa'),
-(9, 'Lucas Teixeira Ronchi', 'lucas0headshot@gmail.com', '0000-00-00', '0000-00-00 00:00:00', '1212', '1212', 'asasas'),
-(21, 'Lucas Teixeira Ronchi', 'lucas0headshot@gmail.com', '1111-11-11', '2023-05-13 03:05:53', '121', '0', 'aaa'),
-(15, 'Lucas Teixeira Ronchi', 'lucas0headshot@gmail.com', '0000-00-00', '2023-05-13 00:05:56', '121', '0', 'asa'),
-(23, 'Lucas Teixeira Ronchi', 'lucas0headshot@gmail.com', '1111-11-11', '2023-05-13 03:05:37', '(11) 1111-111', '(11) 11111-111', 'a');
+(40, 'WebBrain', 'webbrain@gmail.com', '2000-05-13', '2023-05-13 22:05:56', '(48) 2102-749', '(48) 9.2102-74', 'Soluções em software para gestão pública ágil e eficiente!'),
+(39, 'Teste', 'teste@gmail.com', '2000-05-13', '2023-05-13 22:05:25', '(12) 3456-789', '(09) 8.7654-32', 'Teste, teste, teste, teste e mais teste');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
