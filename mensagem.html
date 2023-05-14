@@ -1,0 +1,52 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- Importa CSS-Bootstrap  -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Importa CSS customizado  -->
+    <title>Relatório de Contato</title>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-4 position-absolute start-50 translate-middle">
+                <form id="form-procura">
+                    <input class="form-control me-2" type="search" id="procura" placeholder="Digite um nome">
+                    <div class="col-2">
+                        <button class="btn" type="submit">Pesquisar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row p-5">
+            <div class="col">
+                <table class="table">
+                    <caption>Lista de Contatos</caption>
+                    <thead class="border-bottom text-black">
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Data de Nascimento</th>
+                            <th scope="col">Data de Envio</th>
+                            <th scope="col">Telefone</th>
+                            <th scope="col">Celular</th>
+                            <th scope="col">Mensagem</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- Importa JQuery, JS-Boostrap, JQuery Mask, .js que valida os campos e script -->
+<script src="js/jquery-3.6.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mask.min.js"></script>
+<script src="js/mensagem.js"></script>
+</body>
+</html>

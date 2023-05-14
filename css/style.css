@@ -33,7 +33,6 @@ textarea.form-control {
 }
 
 /* Formulário e Alert */
-form, .alert {
+#form, .alert {
     margin-bottom: 0;
 }
-
